@@ -38,5 +38,6 @@ export default {
   .home .middle{
     flex-grow: 1;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
 </style>

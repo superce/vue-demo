@@ -2,12 +2,15 @@
   <div class="list">
     <ul>
       <li v-for="good in goods">
+        <router-link to="/detail">
         <div class="img">
           <img :src="good.img" :title="good.title" />
         </div>
         <div class="title" :title="good.title">{{ good.title }}</div>
         <div class="price">
-          <span>价钱:</span> {{ good.price }}</div>
+          <span>价钱:</span> {{ good.price }}
+          </div>
+          </router-link>
       </li>
     </ul>
   </div>
@@ -68,6 +71,7 @@
   .price {
     color: #333;
     font-size: 20px;
+    margin:10px 0;
   }
 
   .list ul li .price {
