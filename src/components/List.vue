@@ -1,16 +1,16 @@
 <template>
   <div class="list">
     <ul>
-      <li v-for="good in goods">
-        <router-link to="/detail">
-        <div class="img">
-          <img :src="good.img" :title="good.title" />
-        </div>
-        <div class="title" :title="good.title">{{ good.title }}</div>
-        <div class="price">
-          <span>价钱:</span> {{ good.price }}
+      <li v-for="good in goods">       
+        <div class="link" @click="getDetail()">
+          <div class="img">
+            <img :src="good.img" :title="good.title" />
           </div>
-          </router-link>
+          <div class="title" :title="good.title">{{ good.title }}</div>
+          <div class="price">
+            <span>价钱:</span> {{ good.price }}
+          </div>
+          </div>
       </li>
     </ul>
   </div>
@@ -30,6 +30,11 @@
           this.goods = res.data.goods
         }, err => {
           alert('休息一会');
+        })
+      },
+      getDetail(id) {
+        this.$router.push({
+          path: `/Detail`
         })
       }
     },
@@ -58,11 +63,13 @@
     width: 48%;
     margin: 1%;
     text-align: center;
-    box-shadow:  rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
   }
-  .list ul li .img{
-    border-bottom:1px solid rgba(226, 226, 226,0.3) 
+
+  .list ul li .img {
+    box-shadow: rgba(0, 0, 0, 0.12) 0 0 1px;
   }
+
   .list ul li img {
     width: 100%;
   }
@@ -71,7 +78,7 @@
   .price {
     color: #333;
     font-size: 20px;
-    margin:10px 0;
+    margin: 10px 0;
   }
 
   .list ul li .price {
