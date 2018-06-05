@@ -1,21 +1,21 @@
 <template>
   <div class="headerDtail">
 		<div class="logo">
-			<h1>主页</h1>
+			<h1>132</h1>
 		</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HeaderDtail'
+	name: 'HeaderDtail',
 }
 </script>
 
 <style scoped>
 	.headerDtail{
 		width:100%;		
-		height: 50px;
+		height: 40px;
 		box-shadow: 1px 0 1px #ccc;
 	}
 	.headerDtail .logo{
@@ -24,6 +24,6 @@ export default {
 	}
 	.headerDtail .logo h1{
 		font-size: 30px;
-		line-height: 50px;
+		line-height: 40px;
 	}
 </style>
