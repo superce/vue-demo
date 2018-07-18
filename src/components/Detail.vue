@@ -10,7 +10,7 @@
           </svg>
         </div>
         <div class="title">
-          <h2>详情页</h2>
+          <h2> {{ price }}</h2>
         </div>
       </div>
     </div>
@@ -21,13 +21,28 @@
 </template>
 
 <script>
+import axios from 'axios'
   export default {
     name: 'Detail',
+    props:["price"],
     methods: {
       goBack() {
         window.history.back();
       }
-    }
+    },
+    // computed: {
+    //   goodDetail(){
+    //     // axios.get("../../static/goods.json").then(
+    //     // res => {
+    //     //   this.goods = res.data.goods;
+    //     // },
+    //     // err => {
+    //     //   alert("休息一会");
+    //     // }
+    //   // );
+    //     return this.$route.params.price
+    //   }
+    // }
   }
 
 </script>
@@ -58,7 +73,7 @@
 
   .detail .title h2 {
     font-size: 30px;
-    line-height: 50px;
+    line-height: 40px;
   }
 
 </style>

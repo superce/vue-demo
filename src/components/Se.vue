@@ -44,6 +44,7 @@ export default {
 .home .middle .lodding{
   width: 50px;
   margin: 20px auto 0;
+  
 }
 .home .middle .lodding img{
   width:100%;

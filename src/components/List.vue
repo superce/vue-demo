@@ -2,7 +2,7 @@
   <div class="list">
     <ul>
       <li v-for="good in goods">       
-          <router-link to='/Detail'>
+          <router-link :to="'/detail' + good.price">
           <div class="img">
             <img :src="good.img" :title="good.title" />
           </div>
@@ -20,25 +20,31 @@
 import axios from "axios";
 export default {
   name: "List",
-  created() {
-    this.getData();
-  },
-  methods: {
-    getData() {
-      axios.get("../../static/goods.json").then(
-        res => {
-          this.goods = res.data.goods;
-        },
-        err => {
-          alert("休息一会");
-        }
-      );
+  // created() {
+  //   this.getData();
+  // },
+  computed: {
+    // getData() {
+    //   axios.get("http://localhost:3000/goods").then(
+    //     res => {
+    //       this.goods = res.data.goods;
+    //     },
+    //     err => {
+    //       alert("休息一会");
+    //     }
+    //   );
+    // }
+    getData(){
+      return this.$store
     }
   },
   data() {
     return {
       goods: []
     };
+  },
+  computed:{
+
   }
 };
 </script>

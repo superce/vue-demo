@@ -20,8 +20,8 @@ export default {
   name: 'Home',
   components: {
     HeaderDtail,
-    FooterDtail,
-    List
+    List,
+    FooterDtail
   }
 }
 </script>
